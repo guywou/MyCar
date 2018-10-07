@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <div style="text-align: center">
+    <h1>Mileages</h1>
+
+    <div *ngFor="let mileage of mileages">
+      {{mileage.date | date:'dd/MM/yyyy'}}
+      {{mileage.mileage}}
+    </div>
+  </div>
+</div>
