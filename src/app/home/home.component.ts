@@ -12,9 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:5001/api/mileageinfos').subscribe((data: Array<object>) => {
-      this.mileages = data;
-      console.log(data);
-    });
+
   }
 }

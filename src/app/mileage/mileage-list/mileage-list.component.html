@@ -1,0 +1,23 @@
+<div class="col-md-6">
+  <h2>Mileage Details</h2>
+  <button class="btn btn-danger"> Add Mileage</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Date</th>
+      <th>Mileage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let mileage of mileages">
+      <td>{{mileage.id}}</td>
+      <td>{{mileage.date}}</td>
+      <td>{{mileage.mileage}}</td>
+      <!-- <td><button class="btn btn-danger"> Delete</button>
+        <button class="btn btn-danger" style="margin-left: 20px;"> Edit</button></td> -->
+    </tr>
+    </tbody>
+  </table>
+</div>
