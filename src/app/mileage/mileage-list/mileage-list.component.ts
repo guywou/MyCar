@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MileageService } from '../../_services/mileage.service';
+import { Mileage } from '../../_models/mileage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mileage-list',
@@ -8,14 +10,15 @@ import { MileageService } from '../../_services/mileage.service';
 })
 export class MileageListComponent implements OnInit {
 
-  public mileages: object[];
+  public mileages: Mileage[];
 
-  constructor(private mileageService: MileageService) { }
+  constructor(private mileageService: MileageService, private router: Router) { }
 
   ngOnInit() {
     this.mileageService.getMileages().subscribe(data => {
       this.mileages = data;
     });
   }
+
 
 }

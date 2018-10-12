@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { MileageService } from '../../_services/mileage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mileage-edit',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MileageEditComponent implements OnInit {
 
-  constructor() { }
+  editForm: FormGroup;
+
+  constructor(private mileageService: MileageService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.mileageService.addMileage(this.editForm.value);
+  }
 }
