@@ -8,6 +8,7 @@
       <th>Id</th>
       <th>Date</th>
       <th>Mileage</th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -15,8 +16,9 @@
       <td>{{mileage.id}}</td>
       <td>{{mileage.date}}</td>
       <td>{{mileage.mileage}}</td>
-      <!-- <td><button class="btn btn-danger"> Delete</button>
-        <button class="btn btn-danger" style="margin-left: 20px;"> Edit</button></td> -->
+      <td>
+        <button class="btn btn-danger" (click)="deleteMileage(mileage)"> Delete</button>
+      </td>
     </tr>
     </tbody>
   </table>

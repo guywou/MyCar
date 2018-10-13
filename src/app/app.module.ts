@@ -11,6 +11,7 @@ import { MileageEditComponent } from './mileage/mileage-edit/mileage-edit.compon
 import { MileageListComponent } from './mileage/mileage-list/mileage-list.component';
 import { MileageService } from './_services/mileage.service';
 import { appRoutes } from './routes';
+import { AlertifyService } from './_services/alertify.service';
 
 @NgModule({
    declarations: [
@@ -28,6 +29,7 @@ import { appRoutes } from './routes';
       FormsModule
    ],
    providers: [
+       AlertifyService,
        MileageService
    ],
    bootstrap: [

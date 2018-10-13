@@ -6,13 +6,19 @@ import { Mileage } from 'src/app/_models/mileage';
   providedIn: 'root'
 })
 export class MileageService {
+  baseUrl = 'http://localhost:5000/api/mileageinfos/';
+
   constructor(private http: HttpClient) { }
 
   getMileages() {
-    return this.http.get<Mileage[]>('http://localhost:5001/api/mileageinfos');
+    return this.http.get<Mileage[]>(this.baseUrl);
   }
 
   addMileage(mileage: Mileage) {
-    this.http.post('http://localhost:5001/api/mileageinfos', mileage);
+    return this.http.post(this.baseUrl + 'create', mileage);
+  }
+
+  deleteMileage(id: number) {
+    return this.http.delete(this.baseUrl + id);
   }
 }
